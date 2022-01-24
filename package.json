@@ -8,13 +8,13 @@
     "mssql": "^7.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/javier-aml/EnlaccesSoccer_API.git"
   },
-  "author": "",
+  "author": "JAML",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/javier-aml/EnlaccesSoccer_API/issues"
