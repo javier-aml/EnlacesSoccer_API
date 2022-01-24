@@ -7,9 +7,7 @@
     "express": "^4.17.2",
     "mssql": "^7.3.0"
   },
-  "scripts": {
-    "test": "test"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/javier-aml/EnlaccesSoccer_API.git"
