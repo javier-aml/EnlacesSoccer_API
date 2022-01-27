@@ -1,14 +1,12 @@
 const mssql = require('mssql');
 const sqlConfig = require('../config/db');
 
-const getData = async () => {
+exports.ConsultarEquipos = async (args) => {
   try {
     const pool = await mssql.connect(sqlConfig);
-    const result = await pool.request().input('nActivo', 1).execute('ConsultarEquipos');
-    exports.ConsultarEquipos = result.recordsets[0];
+    const result = await pool.request().input('nActivo', args.nActivo).execute('ConsultarEquipos');
+    return result.recordsets[0];
   } catch (err) {
-    exports.ConsultarEquipos = err;
+    return err;
   }
 };
-
-getData();

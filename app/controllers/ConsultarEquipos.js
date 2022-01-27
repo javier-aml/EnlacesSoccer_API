@@ -1,5 +1,9 @@
 const model = require('../models/ConsultarEquipos');
+const url = require('url');
 
-const getData = async (req, res) => await res.send(model.ConsultarEquipos);
-
-exports.get = getData;
+exports.get = async (req, res) => {
+    const params = url.parse(req.url, true).query;
+    let data = await model.ConsultarEquipos(params);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.json(data);
+};
