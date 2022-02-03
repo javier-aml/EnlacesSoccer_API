@@ -10,7 +10,7 @@ const activarLiga = require('../controllers/ActivarLiga');
 const eliminarLiga = require('../controllers/EliminarLiga');
 const consultarPaises = require('../controllers/ConsultarPaises');
 const consultarEstados = require('../controllers/ConsultarEstados');
-
+const consultarMunicipios = require('../controllers/ConsultarMunicipios');
 
 router.get('/', defaultRoute.get);
 router.get('/BuscarLiga', buscarLiga.get);
@@ -21,5 +21,6 @@ router.patch('/ActivarLiga', activarLiga.patch);
 router.delete('/EliminarLiga', eliminarLiga.delete);
 router.get('/ConsultarPaises', consultarPaises.get);
 router.get('/ConsultarEstados', consultarEstados.get);
+router.get('/ConsultarMunicipios', consultarMunicipios.get);
 
 module.exports = router;
