@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
 const defaultRoute = require('../controllers/DefaultController');
 const buscarLiga = require('../controllers/BuscarLiga');
@@ -12,6 +13,9 @@ const consultarPaises = require('../controllers/ConsultarPaises');
 const consultarEstados = require('../controllers/ConsultarEstados');
 const consultarMunicipios = require('../controllers/ConsultarMunicipios');
 
+const login = require('../auth/controllers/login');
+const validsession = require('../auth/controllers/validsession');
+
 router.get('/', defaultRoute.get);
 router.get('/BuscarLiga', buscarLiga.get);
 router.get('/ConsultarLigas', consultarLigas.get);
@@ -22,5 +26,8 @@ router.delete('/EliminarLiga', eliminarLiga.delete);
 router.get('/ConsultarPaises', consultarPaises.get);
 router.get('/ConsultarEstados', consultarEstados.get);
 router.get('/ConsultarMunicipios', consultarMunicipios.get);
+
+router.post('/login', login.post);
+router.get('/validsession', passport.authenticate('jwt', {session: false}), validsession.get);
 
 module.exports = router;
