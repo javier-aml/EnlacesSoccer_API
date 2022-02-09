@@ -5,7 +5,7 @@ exports.ConsultarEstados = async (params) => {
   try {
     const pool = await mssql.connect(sqlConfig);
     const result = await pool.request()
-      .input('nActivo', params.nActivo)
+      .input('pnActivo', params.pnActivo)
       .execute('ConsultarEstados');
     return result.recordsets[0];
   } catch (err) {

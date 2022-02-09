@@ -5,10 +5,10 @@ exports.BuscarLiga = async (params) => {
   try {
     const pool = await mssql.connect(sqlConfig);
     const result = await pool.request()
-      .input('sNombre', params.sNombre)
-      .input('nIdPais', params.nIdPais)
-      .input('nIdEstado', params.nIdEstado)
-      .input('nIdMunicipio', params.nIdMunicipio)
+      .input('psNombre', params.psNombre)
+      .input('pnIdPais', params.pnIdPais)
+      .input('pnIdEstado', params.pnIdEstado)
+      .input('pnIdMunicipio', params.pnIdMunicipio)
       .execute('BuscarLiga');
     return result.recordsets[0];
   } catch (err) {

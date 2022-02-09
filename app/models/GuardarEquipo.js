@@ -1,15 +1,16 @@
 const mssql = require('mssql');
 const sqlConfig = require('../config/db');
 
-exports.EliminarLiga = async (body, params) => {
+exports.GuardarEquipo = async (body) => {
   try {
     const pool = await mssql.connect(sqlConfig);
     const result = await pool.request()
-      .input('pnIdLiga', params.pnIdLiga)
-      .input('pdFechaUltimaMod', body.pdFechaUltimaMod)
+      .input('pnIdLiga', body.pnIdLiga)
+      .input('psNombre', body.psNombre)
+      .input('pnActivo', body.pnActivo)
       .input('psNombrePcMod', body.psNombrePcMod)
       .input('pnClaUsuarioMod', body.pnClaUsuarioMod)
-      .execute('EliminarLiga');
+      .execute('GuardarEquipo');
     return result.recordsets[0];
   } catch (err) {
     return err;
