@@ -4,6 +4,7 @@ const passport = require('passport');
 
 const defaultRoute = require('../controllers/DefaultController');
 const buscarLiga = require('../controllers/BuscarLiga');
+const consultarLiga = require('../controllers/ConsultarLiga');
 const consultarLigas = require('../controllers/ConsultarLigas');
 const guardarLiga = require('../controllers/GuardarLiga');
 const actualizarLiga = require('../controllers/ActualizarLiga');
@@ -25,6 +26,7 @@ const validsession = require('../auth/controllers/validsession');
 
 router.get('/', defaultRoute.get);
 router.get('/BuscarLiga', buscarLiga.get);
+router.get('/ConsultarLiga', consultarLiga.get);
 router.get('/ConsultarLigas', consultarLigas.get);
 router.post('/GuardarLiga', guardarLiga.post);
 router.put('/ActualizarLiga', actualizarLiga.put);
