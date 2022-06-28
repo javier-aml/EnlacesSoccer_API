@@ -13,6 +13,7 @@ const eliminarLiga = require('../controllers/EliminarLiga');
 const consultarPaises = require('../controllers/ConsultarPaises');
 const consultarEstados = require('../controllers/ConsultarEstados');
 const consultarMunicipios = require('../controllers/ConsultarMunicipios');
+const consultarGrid = require('../controllers/ConsultarGrid');
 
 const actualizarEquipo = require('../controllers/ActualizarEquipo');
 const guardarEquipo = require('../controllers/GuardarEquipo');
@@ -35,7 +36,7 @@ router.delete('/EliminarLiga', eliminarLiga.delete);
 router.get('/ConsultarPaises', consultarPaises.get);
 router.get('/ConsultarEstados', consultarEstados.get);
 router.get('/ConsultarMunicipios', consultarMunicipios.get);
-
+router.get('/ConsultarGrid', consultarGrid.get);
 router.put('/ActualizarEquipo', actualizarEquipo.put);
 router.post('/GuardarEquipo', guardarEquipo.post);
 router.delete('/EliminarEquipo', eliminarEquipo.delete);
