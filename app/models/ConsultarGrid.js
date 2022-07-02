@@ -5,8 +5,8 @@ exports.ConsultarGrid = async (params) => {
   try {
     const pool = await mssql.connect(sqlConfig);
     const result = await pool.request()
-      .input('psTabla', params.pnTabla)
-      .input('psColumnas', params.pnColumnas)
+      .input('psTabla', params.psTabla)
+      .input('psColumnas', params.psColumnas)
       .execute('ConsultarGrid');
     return result.recordsets[0];
   } catch (err) {
