@@ -37,7 +37,7 @@ router.get('/ConsultarPaises', consultarPaises.get);
 router.get('/ConsultarEstados', consultarEstados.get);
 router.get('/ConsultarMunicipios', consultarMunicipios.get);
 router.get('/ConsultarGrid', consultarGrid.get);
-router.get('/GuardarGrid', guardarGrid.post);
+router.post('/GuardarGrid', guardarGrid.post);
 router.put('/ActualizarEquipo', actualizarEquipo.put);
 router.post('/GuardarEquipo', guardarEquipo.post);
 router.delete('/EliminarEquipo', eliminarEquipo.delete);
