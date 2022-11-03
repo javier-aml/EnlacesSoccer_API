@@ -21,6 +21,7 @@ const eliminarEquipo = require('../controllers/EliminarEquipo');
 const consultarEquipo = require('../controllers/ConsultarEquipo');
 const buscarEquipos = require('../controllers/BuscarEquipos');
 const activarEquipo = require('../controllers/ActivarEquipo');
+const buscarTiposSancion = require('../controllers/BuscarTiposSancion');
 
 const login = require('../auth/controllers/login');
 const validsession = require('../auth/controllers/validsession');
@@ -44,6 +45,7 @@ router.delete('/EliminarEquipo', eliminarEquipo.delete);
 router.get('/ConsultarEquipo', consultarEquipo.get);
 router.get('/BuscarEquipos', buscarEquipos.get);
 router.patch('/ActivarEquipo', activarEquipo.patch);
+router.get('/BuscarTiposSancion', buscarTiposSancion.get);
 
 router.post('/login', login.post);
 router.get('/validsession', passport.authenticate('jwt', {session: false}), validsession.get);
