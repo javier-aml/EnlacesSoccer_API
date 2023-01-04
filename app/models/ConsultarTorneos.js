@@ -5,8 +5,8 @@ exports.ConsultarTorneos = async (params) => {
   try {
     const pool = await mssql.connect(sqlConfig);
     const result = await pool.request()
+      //.input('pnIdLiga', params.pnIdLiga)  
       .input('pnActivo', params.pnActivo)
-      .input('pnIdLiga', params.pnIdLiga)
       .execute('ConsultarTorneos');
     return result.recordsets[0];
   } catch (err) {
