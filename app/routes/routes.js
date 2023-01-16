@@ -7,6 +7,7 @@ const buscarLiga = require('../controllers/BuscarLiga');
 const consultarLiga = require('../controllers/ConsultarLiga');
 const consultarLigas = require('../controllers/ConsultarLigas');
 const consultarTorneos = require('../controllers/ConsultarTorneos');
+const consultarEquipos = require('../controllers/ConsultarEquipos');
 const guardarLiga = require('../controllers/GuardarLiga');
 const actualizarLiga = require('../controllers/ActualizarLiga');
 const activarLiga = require('../controllers/ActivarLiga');
@@ -21,17 +22,21 @@ const guardarEquipo = require('../controllers/GuardarEquipo');
 const eliminarEquipo = require('../controllers/EliminarEquipo');
 const consultarEquipo = require('../controllers/ConsultarEquipo');
 const buscarEquipos = require('../controllers/BuscarEquipos');
+const buscarJugadores = require('../controllers/BuscarJugadores');
 const activarEquipo = require('../controllers/ActivarEquipo');
 const buscarTiposSancion = require('../controllers/BuscarTiposSancion');
 
 const login = require('../auth/controllers/login');
 const validsession = require('../auth/controllers/validsession');
+const { ConsultarEquipos } = require('../models/ConsultarEquipos');
+const { BuscarJugadores } = require('../models/BuscarJugadores');
 
 router.get('/', defaultRoute.get);
 router.get('/BuscarLiga', buscarLiga.get);
 router.get('/ConsultarLiga', consultarLiga.get);
 router.get('/ConsultarLigas', consultarLigas.get);
 router.get('/ConsultarTorneos', consultarTorneos.get);
+router.get('/ConsultarEquipos', consultarEquipos.get);
 router.post('/GuardarLiga', guardarLiga.post);
 router.put('/ActualizarLiga', actualizarLiga.put);
 router.patch('/ActivarLiga', activarLiga.patch);
@@ -46,6 +51,7 @@ router.post('/GuardarEquipo', guardarEquipo.post);
 router.delete('/EliminarEquipo', eliminarEquipo.delete);
 router.get('/ConsultarEquipo', consultarEquipo.get);
 router.get('/BuscarEquipos', buscarEquipos.get);
+router.get('/BuscarJugadores', buscarJugadores.get);
 router.patch('/ActivarEquipo', activarEquipo.patch);
 router.get('/BuscarTiposSancion', buscarTiposSancion.get);
 
