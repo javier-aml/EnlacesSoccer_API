@@ -11,6 +11,7 @@ const consultarMunicipios = require('../controllers/ConsultarMunicipios');
 const consultarPaises = require('../controllers/ConsultarPaises');
 const consultarTorneos = require('../controllers/ConsultarTorneos');
 const consultarTiposDeTorneo = require('../controllers/ConsultarTiposDeTorneo');
+const consultarDiasSemana = require('../controllers/ConsultarDiasSemana');
 const defaultRoute = require('../controllers/DefaultController');
 const guardarGrid = require('../controllers/GuardarGrid');
 
@@ -26,6 +27,7 @@ router.get('/ConsultarMunicipios', consultarMunicipios.get);
 router.get('/ConsultarPaises', consultarPaises.get);
 router.get('/ConsultarTorneos', consultarTorneos.get);
 router.get('/ConsultarTiposDeTorneo', consultarTiposDeTorneo.get);
+router.get('/ConsultarDiasSemana', consultarDiasSemana.get);
 
 router.get('/', defaultRoute.get);
 router.post('/GuardarGrid', guardarGrid.post);
